@@ -13,6 +13,7 @@ void tearDown(void)
 
 static void test_black(void)
 {
+   TEST_IGNORE();
    TEST_ASSERT_EQUAL_UINT16(0, color_code(BLACK));
 }
 
