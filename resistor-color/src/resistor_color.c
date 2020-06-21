@@ -1,16 +1,16 @@
 #include "resistor_color.h"
 #include <stdio.h>
 
-int color_code(resistor_band_t x)
+
+static resistor_band_t bands[] = {BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE};
+
+resistor_band_t color_code(resistor_band_t x)
 {
-  return x;
+  return bands[x];
 }
 
-// Not sure what the test is looking for???
-
-int *colors()
+resistor_band_t *colors(void)
 {
-  
-  return 0;
+  return bands;
 }
 
