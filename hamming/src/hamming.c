@@ -1,11 +1,8 @@
 #include <stdlib.h>
+#include <string.h>
 
 int compute(char *str1, char *str2) 
 {
-  int count1;
-  int count2;
-  int i;
-  int ham;
   
   // Check for NULL strings 
   if (str1 == NULL || str2 == NULL)
@@ -14,42 +11,16 @@ int compute(char *str1, char *str2)
   } 
   
   // Check string lengths 
-  count1 = 0;
-  count2 = 0;
-  i = 0;
-  
-  while (str1[i])
-  {
-    count1++;
-    i++;
-  }
-  
-  i = 0;
-  
-  while (str2[i]) 
-  {
-    count2++;
-    i++;
-  }
-  
-  if (count1 != count2) 
+  if (strlen(str1) != strlen(str2)) 
   {
     return -1;
   }
   
-  // Check Hamming distance 
-  i = 0;  
-  ham = 0;
-  
-  while (str1[i]) 
-  {
-    if (str1[i] == str2[i]) 
-    {
-      i++;
-    } else {
+  // Check Hamming distance
+  int ham = 0; 
+  for (int i = 0; str1[i]; i++) {  
+    if (str1[i] != str2[i]) 
       ham++;
-      i++;
-    }
   }
   
   return ham;
