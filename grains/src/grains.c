@@ -3,24 +3,17 @@
 
 uint64_t square(uint8_t index) 
 {
-  // Check index is not 0
-  if (index == 0) 
-  {
-    return 0;
-  }
-  long grains = 1;
-  for (long i = 1; i < index; i++) 
-  {
-    grains = grains * 2;
-  }
-  return grains;
+  if (index <= 1)
+    return index;
+  else 
+    return 2 * square(index - 1);  
 }
 
 uint64_t total(void) 
 {
-  long sum = 1;
-  long grainCounter = 1;
-  for (long i = 1; i < 65; i++) 
+  int16_t sum = 1;
+  int16_t grainCounter = 1;
+  for (int16_t i = 1; i < 65; i++) 
   {
     grainCounter = grainCounter * 2;
     sum = sum + grainCounter;
